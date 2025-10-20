@@ -7,33 +7,34 @@ LAST_SYNC: 2025-10-20
 PURPOSE: Track project progress, status, and metrics across development sessions
 -->
 
-**Last Updated:** 2025-10-20
-**Project Phase:** DEVELOPMENT (Foundation)
-**Completion:** 0% (Project initialization complete, Phase 1 MVP in progress)
-**Next Phase:** Phase 1 - Foundation (MVP)
+**Last Updated:** 2025-10-20 (End of Session 2)
+**Project Phase:** PLANNING (RAG Infrastructure)
+**Completion:** 20% (Coming Soon page LIVE, RAG strategy complete)
+**Next Phase:** Phase 2 - RAG Infrastructure Deployment
 
 ---
 
 ## Project Overview
 
-**Project Type:** Full-Stack Web Application (Svelte + Express monorepo)
-**Primary Goal:** Real-time Nordic tech IPO intelligence platform covering Defence, AI, and Mining sectors
+**Project Type:** AI-Powered Intelligence Platform (RAG + Autonomous Agents)
+**Primary Goal:** Real-time Nordic tech IPO intelligence with AI-generated analysis
+**Strategic Purpose:** Tracer bullet for validating dev-rag system architecture
 **Target Deployment:** Beast (home lab) via Docker + Cloudflare Tunnel
-**Status:** Project initialized with templates, ready to begin Phase 1 development
+**Status:** Coming Soon page LIVE, Phase 2 (RAG infrastructure) ready to execute
 
 ---
 
 ## Phase Status
 
-### Phase 1: Foundation (MVP) 🔄 IN PROGRESS
-- **Duration:** Estimated 2-4 weeks
-- **Output:** Deployed public site with basic functionality
-- **Status:** In Progress (0% - just started)
+### Phase 1: Coming Soon Page ✅ COMPLETE (2025-10-20)
+- **Duration:** 1 hour
+- **Output:** Static site with moose-unicorn branding
+- **Status:** Complete - LIVE at https://nordicunicornnews.com
 
-**Accomplishments:**
+**Accomplishments (Session 1):**
 - [x] Project concept and vision documented
 - [x] Logo design complete (moose-unicorn with Nordic aesthetic)
-- [x] **Domain purchased: nordicunicornnews.com (via Cloudflare)** 🎉
+- [x] Domain purchased: nordicunicornnews.com (via Cloudflare)
 - [x] Git repository initialized
 - [x] AGENTS.md template customized
 - [x] CLAUDE.md template customized
@@ -41,19 +42,24 @@ PURPOSE: Track project progress, status, and metrics across development sessions
 - [x] NEXT-SESSION-START-HERE.md added
 - [x] JIMMYS-WORKFLOW.md copied
 - [x] Package.json and project structure created
-- [ ] Cloudflare Tunnel configuration for nordicunicornnews.com
-- [ ] Docker configuration
-- [ ] Database schema designed
-- [ ] Backend API skeleton
-- [ ] Frontend skeleton (Svelte)
-- [ ] Deployed to Beast at nordicunicornnews.com
+- [x] Cloudflare Tunnel configured
+- [x] Docker container deployed
+- [x] Coming Soon page LIVE
+- [x] Site accessible at https://nordicunicornnews.com
 
-**Key Findings/Decisions:**
-- Decision (2025-10-20): Use monorepo structure (src/server + src/frontend + src/shared) for simplicity
-- Decision (2025-10-20): Separate intelligence pipeline deployment from public site
-- Decision (2025-10-20): Deploy on Beast instead of cloud for cost savings and control
+**Key Findings/Decisions (Session 1):**
+- Decision (2025-10-20): Deploy on Beast instead of cloud for cost savings
 - Decision (2025-10-20): Dark mode default with Nordic aesthetic (blues, teals, gold)
-- **Milestone (2025-10-20): Purchased nordicunicornnews.com domain via Cloudflare** 🎉
+- Milestone (2025-10-20): Purchased nordicunicornnews.com domain via Cloudflare
+- Milestone (2025-10-20): Site went LIVE!
+
+**Major Strategy Pivot (Session 2 - 2025-10-20):**
+- **Decision:** RAG-first approach (not simple database first)
+- **Why:** Use Nordic news as tracer bullet for dev-rag system validation
+- **Decision:** Fully autonomous AI newsroom (Editor + Writer agents)
+- **Decision:** Start simple (1 RSS source, 1 writer agent)
+- **Decision:** Guardian Pi triggers article generation via RSS monitoring
+- **Philosophy:** Build, validate, iterate or throw away - low stakes learning
 
 **Metrics:**
 - Template files: 3/6 complete (AGENTS.md, CLAUDE.md, STATUS.md)
@@ -62,11 +68,11 @@ PURPOSE: Track project progress, status, and metrics across development sessions
 
 ---
 
-### Phase 2: Intelligence ⚪ NOT STARTED
-- **Duration:** Estimated 3-6 weeks
-- **Output:** Connected Kafka pipeline, AI-powered content generation, translations
-- **Status:** Not Started
-- **Dependencies:** Phase 1 complete
+### Phase 2: RAG Infrastructure ⚪ READY TO START
+- **Duration:** Estimated 3-5 days
+- **Output:** Qdrant + Kafka + Ollama deployed, Guardian Pi monitoring active
+- **Status:** Strategy complete, execution specs being finalized
+- **Dependencies:** Phase 1 complete ✅
 
 **Planned Features:**
 - [ ] Kafka pipeline integration

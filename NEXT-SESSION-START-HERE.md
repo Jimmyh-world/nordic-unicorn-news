@@ -7,10 +7,10 @@ LAST_SYNC: 2025-10-20
 PURPOSE: Provide quick context and continuity between development sessions
 -->
 
-**Last Updated:** 2025-10-20
-**Last Session:** Production deployment to Beast - LIVE at https://nordicunicornnews.com
-**Current Phase:** Phase 1 Complete - Coming Soon Page LIVE
-**Session Summary:** Deployed static Coming Soon page with Docker + Cloudflare Tunnel
+**Last Updated:** 2025-10-20 (Session 2 - Strategy Session)
+**Last Session:** Pivoted to RAG-first strategy - Nordic news as tracer bullet for dev-rag system
+**Current Phase:** Planning Phase 2 - RAG Infrastructure Deployment
+**Session Summary:** Made critical architectural decisions, validated approach with dev-rag research
 
 ---
 
@@ -20,13 +20,53 @@ PURPOSE: Provide quick context and continuity between development sessions
 
 **Nordic Unicorn News** is a real-time intelligence platform covering Nordic tech IPOs, listings, and innovation in Defence, AI, and Mining sectors.
 
-**Current Status:** 15% complete
+**NEW STRATEGIC DECISION:** Using Nordic news as **TRACER BULLET** to validate entire dev-rag system!
+
+**Current Status:** 20% complete
 - ✅ Project vision documented
-- ✅ Branding complete (moose-unicorn logo 🫎🦄)
-- ✅ Templates customized (AGENTS.md, CLAUDE.md, STATUS.md)
-- ✅ Coming Soon page deployed and LIVE
-- ✅ Production infrastructure (Docker + Cloudflare Tunnel)
-- 🔄 Next: Build Phase 2 - Full-stack application
+- ✅ Branding complete (moose-unicorn logo 🫎)
+- ✅ Coming Soon page LIVE at https://nordicunicornnews.com
+- ✅ Cloudflare Tunnel operational
+- ✅ **RAG strategy designed** - using dev-rag research
+- ✅ **AI newsroom architecture planned** - autonomous Editor + Writer agents
+- 🔄 **NEXT: Phase 2 execution specs** for Beast
+
+---
+
+## 🎯 MAJOR SESSION 2 DECISIONS (2025-10-20)
+
+### 1. RAG-First Approach
+**Decision:** Deploy full RAG infrastructure BEFORE simple database
+**Why:** Nordic news is low-stakes validation of entire dev-rag system
+**Philosophy:** Build, validate, iterate or throw away - learn fast with low risk
+
+### 2. Autonomous AI Newsroom
+**Decision:** Fully autonomous article generation from day 1
+- Editor Agent (Sonnet 4.5 orchestrator)
+- Writer Agent (Haiku 4.5 generalist)
+- NO human review required
+**Why:** Test if agents can generate quality content autonomously
+
+### 3. Start Simple
+**Decisions:**
+- ✅ 1 RSS source (Breakit.se) - not all Nordic sources
+- ✅ 1 Writer agent (generalist) - not 3 specialists
+- ✅ 1 Kafka topic - not multiple
+- ✅ Guardian Pi triggers via RSS monitoring
+
+### 4. Update Strategy
+**Decision:** Hybrid approach
+- Important news → New article (Writer agent generates)
+- Minor updates → Update company metadata only
+- Duplicates → Ignore
+
+### 5. Tech Stack Validated
+**From dev-rag research:**
+- Qdrant (vector database)
+- Kafka (event bus)
+- Ollama + mxbai-embed-large (embeddings)
+- Claude Haiku 4.5 + Sonnet 4.5 (agents)
+- ydun-scraper (already deployed)
 
 ---
 
@@ -34,148 +74,187 @@ PURPOSE: Provide quick context and continuity between development sessions
 
 ### What's Been Completed ✅
 
-**Infrastructure:**
-- ✅ Docker container deployed on Beast (nginx:alpine)
-- ✅ Cloudflare Tunnel configured and running
-- ✅ Domain routing: nordicunicornnews.com + www
-- ✅ Health monitoring enabled
-- ✅ Auto-restart configured
+**Infrastructure (Session 1):**
+- ✅ Coming Soon page deployed
+- ✅ Docker + Cloudflare Tunnel working
+- ✅ Site LIVE at https://nordicunicornnews.com
+- ✅ Beast ready (96GB RAM, 78GB disk free)
 
-**Site:**
-- ✅ Coming Soon page with moose-unicorn branding
-- ✅ Responsive design
-- ✅ Security headers configured
-- ✅ Gzip compression enabled
-- ✅ Static asset caching
+**Strategy & Planning (Session 2):**
+- ✅ Reviewed dev-rag research (11K lines of docs!)
+- ✅ Designed RAG-first architecture
+- ✅ Planned AI newsroom (Editor + Writer agents)
+- ✅ Created tracer bullet strategy
+- ✅ Documented in NORDIC-NEWS-RAG-STRATEGY.md
+
+**Key Documents Created:**
+- ✅ docs/PHASE-2-EXECUTION-SPEC.md (original - needs revision)
+- ✅ docs/CLOUDFLARE-TUNNEL-SETUP.md
+- ✅ docs/DEPLOYMENT.md (from Beast)
+- ✅ docs/NORDIC-NEWS-RAG-STRATEGY.md (NEW!)
 
 **Metrics:**
-- Deployment: LIVE at https://nordicunicornnews.com
-- Response time: ~50-150ms (via Cloudflare edge)
-- Container status: Healthy
-- Tunnel connections: 4 active (arn02, arn06, arn07)
+- Site: LIVE and healthy
+- Documentation: ~2,500 lines
+- Strategy: Complete and validated
+- Progress: 20% (was 15%, added strategy +5%)
 
 ---
 
-## 🎯 Current Task: Phase 1 Complete - Site LIVE (100% Complete)
+## 🎯 Current Task: Prepare Phase 2 Execution Specs
 
-### Completed Steps
-- [x] Clone repository to Beast
-- [x] Build Docker container
-- [x] Configure port mapping (3001:80)
-- [x] Create Cloudflare Tunnel
-- [x] Route domains to tunnel
-- [x] Start tunnel in background
-- [x] Verify site is live
-- [x] Fix container health checks
-- [x] Create deployment documentation
-- [x] Push to GitHub
+### What Needs To Happen Before Beast Starts
 
-**Result:** ✅ Site is LIVE and healthy!
+**Orchestrator Tasks (Chromebook - YOU):**
+- [ ] Review/revise Phase 2 execution spec for RAG infrastructure
+- [ ] Create Guardian Pi RSS monitoring spec
+- [ ] Push specs to GitHub
+- [ ] Signal Beast to pull and execute
+
+**Beast Tasks (After specs ready):**
+- [ ] Deploy Qdrant container
+- [ ] Deploy Kafka container
+- [ ] Deploy Ollama + mxbai model
+- [ ] Integrate ydun-scraper with pipeline
+- [ ] Validate: Can query RAG system
+
+**Guardian Pi Tasks:**
+- [ ] Set up RSS monitoring script (Breakit.se)
+- [ ] Publish events to Kafka on Beast
+- [ ] Validate: Events appear in Kafka
 
 ---
 
 ## 📁 Key Project Files (Quick Access)
 
-### Start Here if You're New
-1. **AGENTS.md** - Development guidelines and project context
+### Core Documentation
+1. **AGENTS.md** - Development guidelines and AI context
 2. **README.md** - Project overview
-3. **docs/DEPLOYMENT.md** - Production deployment guide (NEW!)
+3. **STATUS.md** - Project progress tracking (NEEDS UPDATE!)
+4. **NEXT-SESSION-START-HERE.md** - This file
 
-### Deployment Files
-4. **docker-compose.yml** - Container orchestration
-5. **Dockerfile** - nginx:alpine build instructions
-6. **cloudflare/config.yml** - Tunnel configuration
-7. **docker/nginx.conf** - nginx server configuration
+### Strategy & Architecture
+5. **docs/NORDIC-NEWS-RAG-STRATEGY.md** ⭐ - Complete tracer bullet strategy
+6. **docs/PHASE-2-EXECUTION-SPEC.md** - Needs revision for RAG-first
+7. **docs/CLOUDFLARE-TUNNEL-SETUP.md** - Tunnel configuration
 
-### Content Files
-8. **public/index.html** - Coming Soon page
-9. **public/assets/** - Logo files (SVG, PNG)
+### Deployment
+8. **docker-compose.yml** - Container orchestration (needs RAG additions)
+9. **Dockerfile** - Current: nginx static site
+10. **cloudflare/config.yml** - Tunnel routing (from Beast)
+
+### Related Research
+11. **~/dev-rag/** - Complete RAG system research (11K lines!)
+12. **~/dev-rag/specs/RAG-BUILD-SEQUENCE-TDD.md** - TDD implementation guide
 
 ---
 
-## 🏗️ Infrastructure Status
+## 🏗️ Architecture Overview
 
-### What's Already Deployed ✅
+### Current (Phase 1)
+```
+User → https://nordicunicornnews.com
+    → Cloudflare Tunnel
+    → Beast: nginx static "Coming Soon" page
+```
 
-**Web Server:**
-- Container: `nordic-unicorn-news` (nginx:alpine)
-- Port: 3001 → 80
-- Status: Healthy, auto-restart enabled
-- Health check: /health endpoint every 30s
-
-**Cloudflare Tunnel:**
-- Tunnel ID: `c0286bf5-701f-406f-bda5-c9bc2d196bd2`
-- Name: `nordic-unicorn-news`
-- Connections: 4 active edge connections
-- Process: Background (nohup)
-
-**Domains:**
-- https://nordicunicornnews.com ✅ LIVE
-- https://www.nordicunicornnews.com ✅ LIVE
-
-### Resource Usage
-
-**Current:**
-- RAM: ~50MB (container + tunnel)
-- CPU: <1%
-- Disk: ~150MB
-
-**Available on Beast:**
-- RAM: 88GB free
-- CPU: 12 cores, 0.24 load
-- Disk: 78GB free
-
-**Result:** ✅ Plenty of capacity for Phase 2 development
+### Target (Phase 2 + 3 + 4)
+```
+┌────────────────────────────────────────────┐
+│ Guardian Pi (192.168.68.10)                │
+│ - Monitor Breakit.se RSS                   │
+│ - Publish to Kafka when IPO detected       │
+└──────────────┬─────────────────────────────┘
+               ↓ Kafka event
+┌──────────────────────────────────────────────────┐
+│ Beast (192.168.68.100) - Docker Stack            │
+│                                                   │
+│ ┌─────────────────────────────────────────────┐ │
+│ │ RAG Infrastructure (Phase 2)                │ │
+│ │ ├─ Kafka (event bus)                        │ │
+│ │ ├─ ydun-scraper (extract content)           │ │
+│ │ ├─ Ollama + mxbai (generate embeddings)     │ │
+│ │ └─ Qdrant (vector storage)                  │ │
+│ └─────────────────────────────────────────────┘ │
+│                                                   │
+│ ┌─────────────────────────────────────────────┐ │
+│ │ AI Newsroom (Phase 3)                       │ │
+│ │ ├─ Editor Agent (Sonnet 4.5 orchestrator)   │ │
+│ │ └─ Writer Agent (Haiku 4.5 generalist)      │ │
+│ └─────────────────────────────────────────────┘ │
+│                                                   │
+│ ┌─────────────────────────────────────────────┐ │
+│ │ Storage (Phase 3)                           │ │
+│ │ ├─ PostgreSQL (articles, companies, users)  │ │
+│ │ └─ Qdrant (company knowledge, embeddings)   │ │
+│ └─────────────────────────────────────────────┘ │
+│                                                   │
+│ ┌─────────────────────────────────────────────┐ │
+│ │ Frontend (Phase 4)                          │ │
+│ │ ├─ Svelte (display articles)                │ │
+│ │ ├─ Express API (serve data)                 │ │
+│ │ └─ nginx (reverse proxy)                    │ │
+│ └─────────────────────────────────────────────┘ │
+└──────────────┬────────────────────────────────────┘
+               ↓
+         Cloudflare Tunnel
+               ↓
+    https://nordicunicornnews.com
+```
 
 ---
 
 ## 🎯 Immediate Next Steps (Choose One)
 
-### Option 1: Build Phase 2 - Full Stack Application ⭐ RECOMMENDED
+### Option 1: Finalize Phase 2 Execution Spec ⭐ RECOMMENDED
 
-**Goal:** Build Svelte + Express full-stack app for news aggregation
+**Goal:** Create detailed RAG infrastructure deployment spec for Beast
 
 **Tasks:**
-- [ ] Design database schema (PostgreSQL)
-- [ ] Create Svelte frontend (companies, articles, watchlists)
-- [ ] Build Express API (scraping, AI content generation)
-- [ ] Integrate Qdrant vector database for RAG
-- [ ] Create Docker Compose stack (app + DB + Qdrant)
-- [ ] Deploy to Beast alongside Coming Soon page
+- [ ] Review existing PHASE-2-EXECUTION-SPEC.md
+- [ ] Revise for RAG-first approach (not simple DB)
+- [ ] Add Qdrant deployment steps
+- [ ] Add Kafka deployment steps
+- [ ] Add Ollama + mxbai deployment steps
+- [ ] Add validation commands for each step
+- [ ] Push to GitHub
 
-**Why First:** Core functionality needed for MVP
+**Why First:** Beast needs this to execute Phase 2
 
-**Reference:** See README.md for Phase 2 requirements
+**Estimated Time:** 1-2 hours
 
 ---
 
-### Option 2: Set Up Development Environment (1 hour)
+### Option 2: Create Guardian Pi Monitoring Spec
 
-**Goal:** Configure local development environment on Chromebook
+**Goal:** Spec for Guardian Pi RSS monitoring setup
 
 **Tasks:**
-- [ ] Install Node.js and dependencies
-- [ ] Create package.json with Svelte + Express
-- [ ] Set up src/ directory structure
-- [ ] Configure dev server with hot reload
-- [ ] Test local development workflow
+- [ ] Design Python RSS monitoring script
+- [ ] Kafka producer configuration
+- [ ] Keyword detection logic (IPO, Defence, AI, Mining)
+- [ ] Cron job or systemd service setup
+- [ ] Validation commands
 
-**Why Next:** Needed before starting Phase 2 development
+**Why Next:** Guardian needs to know what to build
+
+**Estimated Time:** 30-60 min
 
 ---
 
-### Option 3: Configure Monitoring & Analytics (30 min)
+### Option 3: Update Project Documentation
 
-**Goal:** Add monitoring for the live site
+**Goal:** Sync STATUS.md and other docs with new strategy
 
 **Tasks:**
-- [ ] Configure Cloudflare Web Analytics
-- [ ] Add uptime monitoring
-- [ ] Create Grafana dashboard for container metrics
-- [ ] Set up log aggregation
-- [ ] Configure alerts for downtime
+- [ ] Update STATUS.md with Phase 2 RAG strategy
+- [ ] Update README.md with RAG architecture
+- [ ] Review AGENTS.md for accuracy
+- [ ] Commit all updates
 
-**Why Next:** Monitor production site performance
+**Why Next:** Keep documentation accurate
+
+**Estimated Time:** 30 min
 
 ---
 
@@ -183,86 +262,140 @@ PURPOSE: Provide quick context and continuity between development sessions
 
 ### Access Project
 ```bash
-cd ~/nordic-unicorn-news
+cd ~/unicorn-news
 
-# Read session context
-cat NEXT-SESSION-START-HERE.md
-cat docs/DEPLOYMENT.md
+# Check git status
+git status
+git log --oneline -5
 
-# Check deployment status
-docker ps --filter "name=nordic-unicorn-news"
-cloudflared tunnel info nordic-unicorn-news
+# Read strategy
+cat docs/NORDIC-NEWS-RAG-STRATEGY.md
+
+# Check live site
+curl https://nordicunicornnews.com
 ```
 
-### Common Commands
+### Related Repositories
 ```bash
-# Check site status
-curl http://localhost:3001
-curl http://localhost:3001/health
+# RAG research
+cd ~/dev-rag
+cat STATUS.md
 
-# View logs
-docker logs nordic-unicorn-news --tail 50
-tail -f ~/nordic-unicorn-news/cloudflare/tunnel.log
+# Guardian Pi
+cd ~/dev-guardian
 
-# Restart services
-docker compose restart
-pkill -f "cloudflared.*nordic-unicorn-news" && nohup cloudflared --config cloudflare/config.yml tunnel run nordic-unicorn-news > cloudflare/tunnel.log 2>&1 &
+# Deployment infrastructure
+cd ~/dev-network
 ```
 
-### Access Live Site
+### Live Site Status
 ```bash
-# Test from command line
+# Test site
 curl https://nordicunicornnews.com
 
-# Open in browser
-https://nordicunicornnews.com
-https://www.nordicunicornnews.com
+# Check container
+docker ps --filter "name=nordic-unicorn-news"
+
+# Check tunnel
+cloudflared tunnel info nordic-unicorn-news
 ```
 
 ---
 
-## 💡 Key Insights (Quick Recap)
+## 💡 Key Insights (Session 2 Recap)
 
-### Why Docker + Cloudflare Tunnel?
-- **Reason:** Secure, simple deployment without exposing ports
-- **Benefit:** TLS/HTTPS automatic, no firewall config needed
-- **Validation:** Site is live and accessible globally
+### Why RAG-First Makes Sense
+**Original plan:** PostgreSQL → Express → Svelte → add RAG later
+**New plan:** RAG infrastructure → AI agents → PostgreSQL → Frontend
 
-### Why nginx:alpine?
-- **Reason:** Lightweight, fast static file server
-- **Alternatives:** Apache (too heavy), Node.js (overkill for static)
-- **Result:** 10MB RAM usage, 150MB disk, <1% CPU
+**Reasoning:**
+- Nordic news is LOW STAKES (perfect for testing)
+- We ALREADY have dev-rag research (11K lines!)
+- Learn what works/breaks with REAL implementation
+- If it's shit, throw it away and start over
+- Then apply to HIGH STAKES domains (security, trading)
 
-### Why Port 3001?
-- **Problem:** Port 3000 already used by Grafana
-- **Solution:** Use 3001 for Nordic Unicorn News
-- **Impact:** No conflicts, both services running
+### Why Fully Autonomous Agents
+**Question:** Should humans review articles before publishing?
+**Answer:** NO - full autonomous from day 1
+
+**Reasoning:**
+- Test if agents CAN generate quality autonomously
+- Learn failure modes early
+- Low stakes = safe to fail
+- Easier to add human review later than remove it
+
+### Why Start Simple
+**Could build:** 3 specialist writers (Defence/AI/Mining)
+**Actually building:** 1 generalist writer
+
+**Reasoning:**
+- YAGNI principle (You Ain't Gonna Need It)
+- Prove concept with 1 agent first
+- Add specialists only if generalist fails
+- Simpler = easier to debug
+
+### Resource Expectations (Phase 2)
+**Estimated:**
+- Qdrant: ~8GB RAM
+- Kafka: ~4GB RAM
+- Ollama + mxbai: ~12GB RAM
+- Total: ~24GB RAM
+
+**Beast Capacity:**
+- Total: 96GB RAM
+- Used: ~8GB (monitoring, tunnel, etc.)
+- Available: ~88GB RAM
+- **Result:** ✅ Plenty of capacity
+
+### Cost Expectations (Phase 3)
+**50 articles/month:**
+- Editor queries: $0.006/article
+- Writer generation: $0.007/article
+- Total: $0.013/article × 50 = **$0.65/month**
+
+**100 articles/month:** **$1.30/month**
+
+**Conclusion:** Basically FREE to run! 🎉
 
 ---
 
 ## ⚠️ Important Reminders
 
-### 1. Site is LIVE in Production
-The Coming Soon page is now publicly accessible. Any changes pushed to main and deployed will be visible immediately.
+### 1. This Is A Tracer Bullet
+**Not production yet** - This is LEARNING:
+- Validate tech stack works
+- Measure actual resource usage
+- Test if agents generate quality
+- Learn what breaks
+- Iterate or throw away
 
-### 2. Tunnel Runs as Background Process
-The Cloudflare tunnel is not managed by systemd. To ensure it runs after reboot:
-- Either create systemd service (see docs/DEPLOYMENT.md)
-- Or manually restart after reboot
+### 2. Start Simple Philosophy
+- 1 RSS source (Breakit.se)
+- 1 Writer agent (generalist)
+- 1 Kafka topic
+- Add complexity ONLY if needed
 
-### 3. Health Check Fixed
-Container healthcheck now uses `http://127.0.0.1:80/health` instead of `http://localhost/health` to avoid connection refused errors.
+### 3. Jimmy's Workflow (RED → GREEN → CHECKPOINT)
+**Every step:**
+- 🔴 RED: Deploy/implement
+- 🟢 GREEN: Validate with explicit commands
+- 🔵 CHECKPOINT: Commit and document rollback
 
-### 4. Jimmy's Workflow
-**ALWAYS follow RED/GREEN/CHECKPOINT for implementations:**
-- 🔴 **RED:** Implement (write code, deploy services)
-- 🟢 **GREEN:** Validate (run tests, prove it works)
-- 🔵 **CHECKPOINT:** Gate (mark complete, document rollback)
+### 4. Low Stakes = Freedom to Fail
+**If RAG returns garbage:** Iterate or throw away
+**If agents hallucinate:** Adjust or give up
+**If resources blow up:** Rethink architecture
 
-**Never skip validation or rollback procedures!**
+**No pressure** - Just learning!
 
-### 5. Docker Compose Version Removed
-Removed obsolete `version: '3.8'` from docker-compose.yml as it's deprecated in Docker Compose v2.
+### 5. Then Apply to High-Stakes Domains
+**Once validated:**
+- Security domain (CVE tracking)
+- Trading domain (market analysis)
+- Development domain (Cardano docs)
+
+**With confidence** - We know what works!
 
 ---
 
@@ -270,87 +403,96 @@ Removed obsolete `version: '3.8'` from docker-compose.yml as it's deprecated in 
 
 ### Session Start
 ```bash
-# Navigate to project
-cd ~/nordic-unicorn-news
+cd ~/unicorn-news
 
-# Check status
-docker ps --filter "name=nordic-unicorn-news"
-cloudflared tunnel info nordic-unicorn-news
+# Pull latest from GitHub
+git pull origin main
+
+# Check what changed
+git log --oneline -10
+
+# Read this file
+cat NEXT-SESSION-START-HERE.md
+
+# Check live site
 curl https://nordicunicornnews.com
 ```
 
 ### During Development
 ```bash
-# Make changes to public/ content
-vim public/index.html
+# Check strategy
+cat docs/NORDIC-NEWS-RAG-STRATEGY.md
 
-# Restart container to apply changes
-docker compose restart
+# Check dev-rag research
+cd ~/dev-rag && cat README.md
 
-# Verify changes live
-curl https://nordicunicornnews.com
-```
+# Make changes
+vim docs/PHASE-2-EXECUTION-SPEC.md
 
-### Git Operations
-```bash
-# Standard workflow
-git status
-git add .
+# Commit often
+git add -A
 git commit -m "description"
 git push origin main
+```
 
-# GitHub operations
-gh pr list
-gh issue list
+### Coordination
+```bash
+# Push specs to GitHub
+git push origin main
+
+# Beast pulls and executes
+# (on Beast): git pull origin main
+
+# Guardian pulls and executes
+# (on Guardian): git pull origin main
 ```
 
 ---
 
 ## 📊 Progress Tracking
 
-### Phase 1: Coming Soon Page
-- **Status:** ✅ COMPLETE (100%)
-- **Output:** Live site at https://nordicunicornnews.com
-- **Duration:** ~1 hour (2025-10-20)
-- **Deliverables:**
-  - Docker container deployed
-  - Cloudflare Tunnel configured
-  - Domain routing active
-  - Health monitoring enabled
-  - Deployment documentation
+### Phase 1: Coming Soon Page ✅ COMPLETE
+- **Status:** 100% complete
+- **Output:** Live at https://nordicunicornnews.com
+- **Duration:** 1 hour (2025-10-20)
 
-### Phase 2: Full Stack Application
-- **Status:** ⚪ NOT STARTED (0%)
-- **Planned:** Svelte + Express + PostgreSQL + Qdrant
-- **Estimated:** 10-15 hours
+### Phase 2: RAG Infrastructure ⚪ READY TO START
+- **Status:** 0% (specs being finalized)
+- **Estimated:** 3-5 days
+- **Next:** Create execution spec for Beast
 
-### Phase 3: Intelligence Pipeline
-- **Status:** ⚪ NOT STARTED (0%)
-- **Planned:** AI scraping, content generation, email delivery
-- **Estimated:** 15-20 hours
+### Phase 3: AI Newsroom ⚪ NOT STARTED
+- **Status:** 0% (depends on Phase 2)
+- **Estimated:** 5-7 days
+
+### Phase 4: Frontend ⚪ NOT STARTED
+- **Status:** 0% (depends on Phase 3)
+- **Estimated:** 2-3 days
+
+**Total Progress:** 20% (strategy + Phase 1 complete)
 
 ---
 
 ## 🔄 Session Continuity Pattern
 
 ### At Session Start
-1. Read this file (NEXT-SESSION-START-HERE.md)
-2. Check deployment status: `docker ps && cloudflared tunnel info nordic-unicorn-news`
-3. Check last commit: `git log --oneline -5`
-4. Test live site: `curl https://nordicunicornnews.com`
+1. ✅ Pull latest from GitHub
+2. ✅ Read this file (NEXT-SESSION-START-HERE.md)
+3. ✅ Check live site status
+4. ✅ Review last commit
 
 ### During Session
-1. Follow Jimmy's Workflow (RED→GREEN→CHECKPOINT)
-2. Document new findings or implementations
-3. Update this file with progress
-4. Commit frequently with descriptive messages
+1. ✅ Follow Jimmy's Workflow (RED → GREEN → CHECKPOINT)
+2. ✅ Update this file with progress
+3. ✅ Commit frequently
+4. ✅ Document decisions with dates
 
 ### At Session End
-1. Update this file (NEXT-SESSION-START-HERE.md)
-2. Commit all changes
-3. Push to GitHub
-4. Verify deployment still healthy
-5. Note what to start next session
+1. ✅ Update this file with "What's Next"
+2. ✅ Update STATUS.md with progress
+3. ✅ Commit all changes
+4. ✅ Push to GitHub
+5. ✅ Verify deployment still healthy
 
 ---
 
@@ -358,56 +500,53 @@ gh issue list
 
 | Document | Purpose |
 |----------|---------|
-| AGENTS.md | Complete development guidelines and AI context |
-| README.md | Project overview and vision |
-| docs/DEPLOYMENT.md | Production deployment guide (troubleshooting, monitoring) |
-| docker-compose.yml | Container orchestration config |
-| cloudflare/config.yml | Tunnel routing configuration |
+| NEXT-SESSION-START-HERE.md | Session continuity (this file) |
+| STATUS.md | Project progress tracking |
+| AGENTS.md | AI assistant development guidelines |
+| README.md | Project overview |
+| docs/NORDIC-NEWS-RAG-STRATEGY.md | Complete tracer bullet strategy |
+| docs/PHASE-2-EXECUTION-SPEC.md | Beast execution plan (needs revision) |
+| docs/CLOUDFLARE-TUNNEL-SETUP.md | Tunnel configuration |
+| docs/DEPLOYMENT.md | Production deployment guide |
 
 ---
 
-## 📋 Decision Log
+## 📋 Session History
 
-### Deployment Decisions (2025-10-20)
+### Session 1 - 2025-10-20 (Initial Setup & Domain)
+**Duration:** ~2 hours
+**Focus:** Project initialization, Coming Soon page deployment, domain purchase
 
-**Port 3001 for container:** ✅
-- **Why:** Port 3000 occupied by Grafana
-- **Alternatives considered:** Use different port for Grafana (rejected - already in production)
+**Accomplishments:**
+- Created project vision and templates
+- Purchased nordicunicornnews.com
+- Deployed Coming Soon page to Beast
+- Configured Cloudflare Tunnel
+- Site went LIVE!
 
-**Background process for tunnel:** ✅
-- **Why:** Simple, no systemd complexity for now
-- **Future:** May create systemd service for auto-restart on reboot
+### Session 2 - 2025-10-20 (RAG Strategy Pivot)
+**Duration:** ~2 hours
+**Focus:** Strategic planning, dev-rag research review, architecture decisions
 
-**nginx:alpine base image:** ✅
-- **Why:** Minimal footprint, perfect for static content
-- **Impact:** Only 150MB total image size, <10MB RAM usage
+**Accomplishments:**
+- Reviewed dev-rag research (11K lines of docs)
+- Decided on RAG-first approach (not simple DB)
+- Designed AI newsroom (Editor + Writer agents)
+- Created tracer bullet strategy
+- Documented in NORDIC-NEWS-RAG-STRATEGY.md
+- Made critical architectural decisions (autonomous, simple, hybrid updates)
 
----
+**Key Decisions:**
+- Use Nordic news as tracer bullet for dev-rag system
+- Full autonomous article generation (no human review)
+- Start simple (1 RSS source, 1 writer agent)
+- Hybrid update strategy (new article vs metadata update)
+- Guardian Pi triggers via RSS monitoring
 
-## 🆘 Troubleshooting
-
-### "Site is not responding"
-**Answer:** Check container and tunnel status:
-```bash
-docker ps --filter "name=nordic-unicorn-news"
-cloudflared tunnel info nordic-unicorn-news
-curl http://localhost:3001
-```
-
-### "Container is unhealthy"
-**Answer:** Fixed in latest deployment. Healthcheck now uses `http://127.0.0.1:80/health`
-
-### "How do I update the site content?"
-**Answer:** Edit files in `public/`, then restart container:
-```bash
-vim public/index.html
-docker compose restart
-```
-
-### "Where are the logs?"
-**Answer:**
-- Container logs: `docker logs nordic-unicorn-news`
-- Tunnel logs: `tail -f ~/nordic-unicorn-news/cloudflare/tunnel.log`
+**Next Session:**
+- Finalize Phase 2 execution spec for RAG infrastructure
+- Create Guardian Pi monitoring spec
+- Push specs to GitHub for Beast/Guardian execution
 
 ---
 
@@ -415,19 +554,21 @@ docker compose restart
 
 **Most Common Next Action:**
 ```bash
-cd ~/nordic-unicorn-news
-docker ps --filter "name=nordic-unicorn-news"
-curl https://nordicunicornnews.com
+cd ~/unicorn-news
+git pull origin main
+cat docs/NORDIC-NEWS-RAG-STRATEGY.md
 git status
 ```
 
-**Site is LIVE!** Choose your next phase from the options above.
+**Current Focus:** Finalize execution specs for Phase 2 (RAG infrastructure)
 
-**Good luck!**
+**Philosophy:** Build → Validate → Learn → Iterate or Throw Away
+
+**Good luck!** 🫎
 
 ---
 
 **This file is updated at the end of each session for continuity.**
 
-**Last Updated:** 2025-10-20
+**Last Updated:** 2025-10-20 (End of Session 2)
 **Template Version:** 1.0.0
