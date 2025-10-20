@@ -14,6 +14,7 @@ CHANGELOG: See ~/templates/CHANGELOG.md for version history
 ## Repository Information
 - **GitHub Repository**: https://github.com/Jimmyh-world/nordic-unicorn-news (to be created)
 - **Local Directory**: `/home/jimmyb/unicorn-news`
+- **Production Domain**: https://nordicunicornnews.com (via Cloudflare)
 - **Primary Purpose**: Real-time intelligence platform covering Nordic tech IPOs, listings, and innovation in Defence, AI, and Mining sectors
 
 ## Important Context
