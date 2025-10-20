@@ -1,0 +1,17 @@
+# Cloudflare Tunnel Configuration for Nordic Unicorn News
+# Static nginx site serving Coming Soon page
+
+tunnel: c0286bf5-701f-406f-bda5-c9bc2d196bd2
+credentials-file: /home/jimmyb/.cloudflared/c0286bf5-701f-406f-bda5-c9bc2d196bd2.json
+
+ingress:
+  # Nordic Unicorn News - Coming Soon page
+  - hostname: nordicunicornnews.com
+    service: http://localhost:3001
+
+  # Nordic Unicorn News - www subdomain
+  - hostname: www.nordicunicornnews.com
+    service: http://localhost:3001
+
+  # Catch-all - reject any other traffic
+  - service: http_status:404

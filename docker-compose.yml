@@ -1,14 +1,12 @@
-version: '3.8'
-
 services:
   nordic-unicorn-news:
     build: .
     container_name: nordic-unicorn-news
     ports:
-      - "3000:80"
+      - "3001:80"
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80/health"]
       interval: 30s
       timeout: 3s
       retries: 3
