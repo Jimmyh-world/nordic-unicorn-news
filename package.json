@@ -1,0 +1,31 @@
+{
+  "name": "nordic-unicorn-news",
+  "version": "0.1.0",
+  "description": "Real-time Nordic tech IPO intelligence platform covering Defence, AI, and Mining sectors",
+  "main": "src/server/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Development server not configured yet'",
+    "build": "echo 'Build script not configured yet'",
+    "test": "echo 'Tests not configured yet'",
+    "typecheck": "echo 'Type checking not configured yet'",
+    "lint": "echo 'Linting not configured yet'"
+  },
+  "keywords": [
+    "nordic",
+    "ipo",
+    "trading",
+    "intelligence",
+    "news",
+    "svelte",
+    "express"
+  ],
+  "author": "Jimmy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jimmyh-world/nordic-unicorn-news"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
